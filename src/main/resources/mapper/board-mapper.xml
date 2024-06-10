@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="boardMapper">
+    <resultMap id="boardCategory" type="com.dangsya.BanLyeoIn.board.vo.BoardCategoryVO">
+        <id column="CATEGORY_NO"        property="categoryNo"/>
+        <result column="CATEGORY_NAME"  property="categoryName"/>
+    </resultMap>
+
+    <resultMap id="boardPost" type="com.dangsya.BanLyeoIn.board.vo.BoardPostVO">
+        <id column="POST_NO" property="postNo"/>
+        <result column="POST_TITLE"     property="postTitle"/>
+        <result column="POST_CONTENT"   property="postContent"/>
+        <result column="WRITER"         property="writer"/>
+        <result column="CREATE_DATE"    property="createDate"/>
+        <result column="READ_CNT"       property="readCnt"/>
+        <result column="LIKE_CNT"       property="likeCnt"/>
+        <result column="CATEGORY_NO"    property="categoryNo"/>
+    </resultMap>
+
+    <resultMap id="postReply" type="com.dangsya.BanLyeoIn.board.vo.PostReplyVO">
+        <id column="REPLY_NO" property="replyNo"/>
+        <result column="REPLY_CONTENT"  property="replyContent"/>
+        <result column="REPLY_WRITER"   property="replyWriter"/>
+        <result column="REPLY_DATE"     property="replyDate"/>
+        <result column="POST_NO"        property="postNo"/>
+    </resultMap>
+
+    <resultMap id="postAttachment" type="com.dangsya.BanLyeoIn.board.vo.PostAttachmentVO">
+        <id column="ATTACHMENT_CODE"            property="attachmentCode"/>
+        <result column="ORIGIN_FILE_NAME"       property="originFileName"/>
+        <result column="ATTACHED_FILE_NAME"     property="attachedFileName"/>
+        <result column="IS_MAIN"                property="isMain"/>
+        <result column="POST_NO"                property="postNo"/>
+    </resultMap>
+    <!-- 여기에 실제 쿼리문을 작성 -->
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

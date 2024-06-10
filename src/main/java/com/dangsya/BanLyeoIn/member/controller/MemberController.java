@@ -1,5 +1,7 @@
 package com.dangsya.BanLyeoIn.member.controller;
 
+import com.dangsya.BanLyeoIn.member.service.MemberService;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -7,5 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/member")
 public class MemberController {
 
+    @Resource(name = "memberService")
+    private MemberService memberService;
 
 }

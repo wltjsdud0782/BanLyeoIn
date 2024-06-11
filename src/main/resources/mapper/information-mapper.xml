@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 추천 - 정보 관련 (담당: 이송민) -->
+<mapper namespace="informationMapper">
+    <resultMap id="infoCategory" type="com.dangsya.BanLyeoIn.information.vo.InfoCategoryVO">
+        <id     column="infoType"       property="INFO_TYPE"/>
+        <result column="infoTypeName"   property="INFO_TYPE_NAME"/>
+    </resultMap>
+
+    <resultMap id="info" type="com.dangsya.BanLyeoIn.information.vo.InfoVO">
+        <id column="infoNum" property="INFO_NUM"/>
+        <result column="infoTitle" property="INFO_TITLE"/>
+        <result column="infoContent" property="INFO_CONTENT"/>
+        <result column="writer" property="WRITER"/>
+        <result column="createDate" property="CREATE_DATE"/>
+        <result column="readCnt" property="READ_CNT"/>
+        <result column="infoType" property="INFO_TYPE"/>
+    </resultMap>
+
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

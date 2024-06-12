@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="memberMapper">
+    <!-- 여기에 실제 쿼리문을 작성 -->
+    <insert id="insertMemberInfo">
+        INSERT INTO (
+            MEMBER_ID
+            , MEMBER_PW
+            , MEMBER_NAME
+            , MEMBER_TEL
+            , MEMBER_EMAIL
+            , MEMBER_BIRTH
+            , CASE
+                WHEN MEMBER_GENDER = 1
+                THEN 'male'
+                ELSE 'female'
+            END
+            , MEMBER_ADDR
+            , ADDR_DETAIL
+            , POST_CODE
+        ) VALUES (
+            #{memberId}
+            , #{memberPw}
+            , #{memberName}
+            , #{memberTel}
+            , #{memberEmail}
+            , #{memberBirth}
+            . #{memberGender}
+            , #{memberAddr}
+            , #{addrDetail}
+            . #{postCode}
+        )
+    </insert>
+
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{fragment/main_layout}">
+
+<th:block layout:fragment="content_css">
+    <!-- <link rel="stylesheet" href="/css/content/login.css"> -->
+</th:block>
+
+<th:block layout:fragment="contentFragment">
+    산책 지도 표시할 것이다 ..
+    <div id="map" style="width:800px; height:500px;"></div>
+    <div id="clickLatlng"></div>
+</th:block>
+
+<th:block layout:fragment="content_js">
+    <!-- html 파일이 열릴 때 같이 실행되는 js -->
+    <script src="/js/walk/walk.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66b01b71fea07c168af0e42040f0e272"></script>
+    <script type="text/javascript"></script>
+</th:block>
+
+</html>

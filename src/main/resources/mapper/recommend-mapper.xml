@@ -4,8 +4,8 @@
 <!-- 추천 관련 (담당: 이송민) -->
 <mapper namespace="recommendMapper">
     <resultMap id="recommend" type="com.dangsya.BanLyeoIn.recommend.vo.RecommendVO">
-        <id     column="recType"        property="REG_TYPE"/>
-        <result column="recTypeName"    property="REG_TYPE_NAME"/>
+        <id     column="REC_TYPE"         property="recType"/>
+        <result column="REC_TYPE_NAME"    property="recTypeName"/>
     </resultMap>
 
 </mapper>

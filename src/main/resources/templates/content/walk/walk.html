@@ -7,9 +7,30 @@
 </th:block>
 
 <th:block layout:fragment="contentFragment">
-    산책 지도 표시할 것이다 ..
-    <div id="map" style="width:800px; height:500px;"></div>
-    <div id="clickLatlng"></div>
+    <div class="row">
+        <h3>산책 컨텐츠 상세</h3>
+        <div th:if="${walkDetail != null}">
+            제목 [[${walkDetail.walkTitle}]]<br>
+            내용 [[${walkDetail.walkContent}]]<br>
+            작성자 [[${walkDetail.writer}]]<br>
+            작성일 [[${walkDetail.createDate}]]<br>
+            조회수 [[${walkDetail.readCnt}]]<br>
+            추천컨텐츠 유형 [[${walkDetail.recType}]]<br>
+            장소번호 [[${walkDetail.placeVO.placeNum}]]<br>
+            장소명 [[${walkDetail.placeVO.placeName}]]<br>
+            위도 [[${walkDetail.placeVO.latitude}]]<br>
+            경도 [[${walkDetail.placeVO.longitude}]]<br>
+            주소 [[${walkDetail.placeVO.address}]]<br>
+        </div>
+        <div>
+            <div>컨텐츠 지도</div>
+            <div id="map" style="width:800px; height:500px;"></div>
+            <div id="clickLatlng"></div>
+        </div>
+        <div th:unless="${walkDetail != null}">
+            <p>컨텐츠가 없습니다</p>
+        </div>
+    </div>
 </th:block>
 
 <th:block layout:fragment="content_js">

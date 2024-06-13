@@ -4,18 +4,18 @@
 <!-- 추천 - 정보 관련 (담당: 이송민) -->
 <mapper namespace="informationMapper">
     <resultMap id="infoCategory" type="com.dangsya.BanLyeoIn.information.vo.InfoCategoryVO">
-        <id     column="infoType"       property="INFO_TYPE"/>
-        <result column="infoTypeName"   property="INFO_TYPE_NAME"/>
+        <id     column="INFO_TYPE"          property="infoType"/>
+        <result column="INFO_TYPE_NAME"     property="infoTypeName"/>
     </resultMap>
 
     <resultMap id="info" type="com.dangsya.BanLyeoIn.information.vo.InfoVO">
-        <id column="infoNum" property="INFO_NUM"/>
-        <result column="infoTitle" property="INFO_TITLE"/>
-        <result column="infoContent" property="INFO_CONTENT"/>
-        <result column="writer" property="WRITER"/>
-        <result column="createDate" property="CREATE_DATE"/>
-        <result column="readCnt" property="READ_CNT"/>
-        <result column="infoType" property="INFO_TYPE"/>
+        <id column="INFO_NUM"           property="infoNum"/>
+        <result column="INFO_TITLE"     property="infoTitle"/>
+        <result column="INFO_CONTENT"   property="infoContent"/>
+        <result column="WRITER"         property="writer"/>
+        <result column="CREATE_DATE"    property="createDate"/>
+        <result column="READ_CNT"       property="readCnt"/>
+        <result column="INFO_TYPE"      property="infoType"/>
     </resultMap>
 
 

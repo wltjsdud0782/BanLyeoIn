@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 산책 관련 (담당: 이송민) -->
+<mapper namespace="walkMapper">
+    <resultMap id="walk" type="com.dangsya.BanLyeoIn.walk.vo.WalkVO">
+        <id     column="WALK_NUM"            property="walkNum"/>
+        <result column="WALK_TITLE"          property="walkTitle"/>
+        <result column="WALK_CONTENT"        property="walkContent"/>
+        <result column="WRITER"              property="writer"/>
+        <result column="CREATE_DATE"         property="createDate"/>
+        <result column="READ_CNT"            property="readCnt"/>
+        <result column="REC_TYPE"            property="recType"/>
+        <result column="PLACE_NUM"           property="placeNum"/>
+        <association property="placeVO"     resultMap="placeMapper.place"/>
+    </resultMap>
+
+    <!-- 산책 게시물 상세 조회 -->
+    <select id="selectWalkDetail" resultMap="walk">
+        SELECT
+            w.WALK_NUM,
+            w.WALK_TITLE,
+            w.WALK_CONTENT,
+            w.WRITER,
+            w.CREATE_DATE,
+            w.READ_CNT,
+            w.REC_TYPE,
+            p.PLACE_NUM,
+            p.PLACE_NAME,
+            p.LATITUDE,
+            p.LONGITUDE,
+            p.ADDRESS
+        FROM
+            WALK w
+        LEFT JOIN
+            WALK_PLACE wp ON w.WALK_NUM = wp.WALK_NUM
+        LEFT JOIN
+            PLACE p ON wp.PLACE_NUM = p.PLACE_NUM
+        WHERE
+            w.WALK_NUM = #{walkNum}
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

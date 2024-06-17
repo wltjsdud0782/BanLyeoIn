@@ -3,8 +3,8 @@ function initMap() {
     const container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
 
     // 산책 컨텐츠에서 받아온 위치 정보
-    // const latitude = [[${walkDetail.placeVO.latitude}]]; // Thymeleaf 템플릿 엔진을 통해 서버에서 데이터를 받아옵니다.
-    // const longitude = [[${walkDetail.placeVO.longitude}]];
+    const latitude = [[${walkDetail.placeVO.latitude}]]; // Thymeleaf 템플릿 엔진을 통해 서버에서 데이터를 받아옵니다.
+    const longitude = [[${walkDetail.placeVO.longitude}]];
 
     const options = {
         center: new kakao.maps.LatLng(latitude, longitude), // 서버에서 받아온 위치로 지도의 중심 설정

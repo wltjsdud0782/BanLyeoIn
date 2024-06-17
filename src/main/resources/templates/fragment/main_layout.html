@@ -16,29 +16,13 @@
                 <th:block th:replace="~{fragment/side_menu::sideMenuFragment}"></th:block>
             </div>
         </div>
-        <!-- 추천 콘텐츠 (송민) -->
-        <div class="row recommend"> 
-            <div class="col">
-                <th:block th:replace="~{fragment/recommend_side::recommendSideFragment}"></th:block>
-            </div>
-        </div>
-        <!-- 게시판 콘텐츠 (선영) -->
-        <div class="row recommend"> 
-            <div class="col">
-                <th:block th:replace="~{fragment/board_side::boardSideFragment}"></th:block>
-            </div>
-        </div>
         <!-- 연결 콘텐츠 -->
         <div class="row">
             <div class="col">
                 <th:block layout:fragment="contentFragment"></th:block>
             </div>
         </div>
-        
-
     </div>
-
-
     <script src="/js/recommend_side.js"></script>
 <th:block layout:fragment="content_js"></th:block>
 </body>

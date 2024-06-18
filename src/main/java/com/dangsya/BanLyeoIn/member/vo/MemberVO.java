@@ -16,5 +16,5 @@ public class MemberVO {
     private String regDate;
     private int memberRoll;
     private String postCode;
-    private String havePet;
+    private String memberNickname;
 }

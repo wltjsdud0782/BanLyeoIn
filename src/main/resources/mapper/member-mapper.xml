@@ -4,6 +4,24 @@
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <mapper namespace="memberMapper">
     <!-- 여기에 실제 쿼리문을 작성 -->
+
+    <resultMap id="memberInfo" type="com.dangsya.BanLyeoIn.member.vo.MemberVO">
+        <id column="MEMBER_ID"              property="memberId" />
+        <result column="MEMBER_PW"          property="memberPw" />
+        <result column="MEMBER_NAME"        property="memberName" />
+        <result column="MEMBER_TEL"         property="memberTel" />
+        <result column="MEMBER_EMAIL"       property="memberEmail" />
+        <result column="MEMBER_BIRTH"       property="memberBirth" />
+        <result column="MEMBER_GENDER"      property="memberGender" />
+        <result column="MEMBER_ADDR"        property="memberAddr" />
+        <result column="ADDR_DETAIL"        property="addrDetail" />
+        <result column="REG_DATE"           property="regDate" />
+        <result column="MEBER_ROLL"         property="memberRoll" />
+        <result column="POST_CODE"          property="postCode" />
+        <result column="MEMBER_NICKNAME"    property="memberNickname" />
+    </resultMap>
+
+    <!--  회원가입  -->
     <insert id="insertMemberInfo">
         INSERT INTO (
             MEMBER_ID
@@ -20,6 +38,7 @@
             , MEMBER_ADDR
             , ADDR_DETAIL
             , POST_CODE
+            , MEMBER_NICKNAME
         ) VALUES (
             #{memberId}
             , #{memberPw}
@@ -31,8 +50,20 @@
             , #{memberAddr}
             , #{addrDetail}
             . #{postCode}
+            , #{memberNickname}
         )
     </insert>
+
+    <!-- 로그인 -->
+    <select id="login">
+        SELECT MEMBER_ID
+            , MEMBER_NAME
+            , HAVE_PET
+            , MEMBER_NICKNAME
+        FROM MEMBER_INFO
+        WHERE MEMBER_ID = #{memberId}
+        AND MEMBER_PW = #{memberPw}
+    </select>
 
 
 

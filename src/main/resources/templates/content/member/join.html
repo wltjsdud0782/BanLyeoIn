@@ -1,102 +1,102 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    layout:decorate="~{fragment/main_layout}">
-
-<th:block layout:fragment="content_css">
-    <!-- html 파일이 열릴 때 같이 실행되는 css -->
-    <!-- <link rel="stylesheet" href="/css/content/login.css"> -->
-</th:block>
-
-<th:block layout:fragment="contentFragment">
-    <div class="row">
-        <div class="col">
-            <form action="/member/join" method="post">
-                <table>
-                    <tr>
-                        <td>아이디</td>
-                        <td>
-                            <input name="memberId" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>비밀번호</td>
-                        <td>
-                            <input name="memberPw" type="password">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>비밀번호 확인</td>
-                        <td>
-                            <input type="password">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>이름</td>
-                        <td>
-                            <input name="memberName" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>생년월일</td>
-                        <td>
-                            <input name="memberBirth" type="text"> - <input name="memberGender" type="text"><input type="text" placeholder="******" readonly>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>연락처</td>
-                        <td>
-                            <input name="memberTel" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td>
-                            <input name="memberEmail" type="text"> 
-                            <select name="memberEmail2">
-                                <option value="@naver.com">@naver.com</option>
-                                <option value="@gmail.com">@gmail.com</option>
-                                <option value="@daum.net">@daum.net</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>우편번호</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="postCode" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>주소</td>
-                        <td>
-                            <input type="button" value="주소검색">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="memberAddr" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>상세주소</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="addrDetail" type="text">
-                        </td>
-                    </tr>
-                </table>
-            </form>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<link rel="stylesheet" href="/css/content/member/join.css">
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="/member/join" method="post">
+                    <table>
+                        <tr>
+                            <td>아이디</td>
+                            <td>
+                                <input name="memberId" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호</td>
+                            <td>
+                                <input name="memberPw" type="password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호 확인</td>
+                            <td>
+                                <input type="password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>이름</td>
+                            <td>
+                                <input name="memberName" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>닉네임</td>
+                            <td>
+                                <input name="memberNickname" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>생년월일</td>
+                            <td>
+                                <input name="memberBirth" type="text"> - <input name="memberGender" type="text" maxlength="1"><input type="text" placeholder="******" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>연락처</td>
+                            <td>
+                                <input name="memberTel" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>이메일</td>
+                            <td>
+                                <input name="memberEmail" type="text"> 
+                                <select name="memberEmail2">
+                                    <option value="@naver.com">@naver.com</option>
+                                    <option value="@gmail.com">@gmail.com</option>
+                                    <option value="@daum.net">@daum.net</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>우편번호</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="postCode" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>주소</td>
+                            <td>
+                                <input type="button" value="주소검색">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="memberAddr" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>상세주소</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="addrDetail" type="text">
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="등록">
+                </form>
+            </div>
         </div>
     </div>
-
-    
-</th:block>
-
-<th:block layout:fragment="content_js">
-    <!-- html 파일이 열릴 때 같이 실행되는 js -->
-    <!-- <script src="/js/content/member/login.js"></script> -->
-</th:block>
-
+    <script src="/js/content/member/join.js"></script>
+</body>
 </html>

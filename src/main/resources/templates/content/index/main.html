@@ -10,7 +10,24 @@
 <th:block layout:fragment="contentFragment">
   <div class="row mt-3">
     <div class="col">
-      <div onclick="join()">회원가입</div>
+      <div class="row">
+        <div class="col">
+          <div onclick="join()">회원가입</div>
+
+        </div>
+        <form action="/member/login" method="post">
+          <div class="row">
+            <div class="col">
+              아이디 <input type="text" name="memberId">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              비밀번호 <input type="password" name="memberPw"> <input type="submit" value="로그인">
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <div class="row mt-3">

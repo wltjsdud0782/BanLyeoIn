@@ -7,4 +7,6 @@ public interface MemberService {
     int insertMemberInfo(MemberVO memberVO);
 
     MemberVO selectMeberInfo(MemberVO memberVO);
+
+    int dupleChk(String memberId);
 }

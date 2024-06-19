@@ -21,4 +21,9 @@ public class MemberServiceImpl implements MemberService {
     public MemberVO selectMeberInfo(MemberVO memberVO) {
         return sqlSession.selectOne("memberMapper.login", memberVO);
     }
+
+    @Override
+    public int dupleChk(String memberId) {
+        return sqlSession.selectOne("memberMapper.dupleChk", memberId);
+    }
 }

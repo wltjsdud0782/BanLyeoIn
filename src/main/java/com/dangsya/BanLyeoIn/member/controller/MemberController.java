@@ -5,10 +5,7 @@ import com.dangsya.BanLyeoIn.member.vo.MemberVO;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/member")
@@ -32,12 +29,27 @@ public class MemberController {
 
     // 로그인 기능 구현 (비동기)
     @ResponseBody
-    @GetMapping("/login")
+    @PostMapping("/login")
     public MemberVO login(MemberVO memberVO, HttpSession session){
         MemberVO vo = memberService.selectMeberInfo(memberVO);
-        session.setAttribute("memberInfo", vo); // memberInfo에 memberVO 저장
+        session.setAttribute("loginInfo", vo); // loginInfo에 memberVO 저장
         session.setMaxInactiveInterval(60 * 30); // 로그인 30분 유지
         return vo;
     }
 
+    // 아이디 중복 체크
+    @ResponseBody
+    @GetMapping("/dupleChk")
+    public boolean dupleChk(@RequestBody MemberVO memberVO){
+        if (memberVO.getMemberId() != null) {
+            int result = memberService.dupleChk(memberVO.getMemberId());
+            if(result > 0){
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }
